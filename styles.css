@@ -1,11 +1,15 @@
+
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
     background-color: #333;
     color: white;
@@ -20,10 +24,14 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -41,29 +49,60 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Hero Section */
 #hero {
-    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url('path/to/your-image.jpg') no-repeat center center/cover;
+    height: 100vh;
     color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero .container {
     text-align: center;
 }
 
-#hero .btn {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-#about, #projects, #contact {
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: #333;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+/* About, Projects, Contact Sections */
+section {
     padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
     text-align: center;
 }
 
@@ -112,6 +151,7 @@ form button:hover {
     background: #555;
 }
 
+/* Footer */
 footer {
     background: #333;
     color: white;
@@ -125,8 +165,38 @@ footer .social a {
     margin: 0 10px;
     text-decoration: none;
     font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
 
 footer .social a:hover {
     color: #ccc;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
